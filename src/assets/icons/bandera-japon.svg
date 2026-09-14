@@ -1,0 +1,7 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="64" height="48" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Bandera">
+<path d="M8 0.5H56C60.1421 0.5 63.5 3.85786 63.5 8V40C63.5 44.1421 60.1421 47.5 56 47.5H8C3.85786 47.5 0.5 44.1421 0.5 40V8L0.509766 7.61426C0.710536 3.65139 3.98724 0.5 8 0.5Z" fill="white"/>
+<path d="M8 0.5H56C60.1421 0.5 63.5 3.85786 63.5 8V40C63.5 44.1421 60.1421 47.5 56 47.5H8C3.85786 47.5 0.5 44.1421 0.5 40V8L0.509766 7.61426C0.710536 3.65139 3.98724 0.5 8 0.5Z" stroke="#D5DEE8"/>
+<circle id="circulo" cx="32" cy="24" r="12" fill="#BC002D"/>
+</g>
+</svg>
