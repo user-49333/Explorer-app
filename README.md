@@ -31,7 +31,7 @@ nombre o capital, filtrarlos por región y consultar la ficha de cada uno.
 ## Instalación y ejecución
 
 ```bash
-git clone <url-del-repositorio>
+git clone https://github.com/user-49333/Explorer-app
 cd parcial1
 bun install
 ```
