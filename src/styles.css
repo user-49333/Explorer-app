@@ -1,0 +1,185 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+
+/* daisyUI: se desactivan los temas incluidos y se usa uno propio construido con los tokens de Figma */
+@plugin "daisyui" {
+  themes: false;
+}
+
+/* ==========================================================================
+   Design Tokens — Figma "Explorer App — UX/UI Lab 1" (coleccion Explorer App, modo Light)
+   Cada variable genera sus utility classes: bg-primary, text-text-secondary,
+   p-md, rounded-md, text-title, shadow-card, etc.
+   ========================================================================== */
+@theme {
+  /* ---------- Color ---------- */
+  --color-primary: #12507b; /* Botones primarios, acentos */
+  --color-primary-hover: #0e3f61; /* Boton en hover */
+  --color-primary-active: #0a2e47; /* Boton presionado */
+  --color-secondary: #0f766e; /* Acentos e informacion */
+  --color-background: #f4f7fa; /* Fondo de pantalla */
+  --color-surface: #ffffff; /* Tarjetas, header, campos */
+  --color-surface-subtle: #e4edf5; /* Hero e imagenes placeholder */
+  --color-text-primary: #10202e; /* Titulos y datos */
+  --color-text-secondary: #4f6070; /* Texto de apoyo */
+  --color-text-on-primary: #ffffff; /* Texto sobre primario */
+  --color-border: #d5dee8; /* Bordes y divisores */
+  --color-focus: #0b57d0; /* Anillo de foco */
+  --color-disabled-surface: #e3e8ee; /* Controles inactivos */
+  --color-disabled-text: #7d8b99; /* Texto inactivo */
+
+  /* ---------- Espaciado ---------- */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  /* ---------- Radios ---------- */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-pill: 999px;
+
+  /* ---------- Tipografia ---------- */
+  --font-sans: "Inter Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --text-title: 28px; /* text/title */
+  --text-title--line-height: 34px;
+  --text-title--letter-spacing: -0.28px;
+  --text-title--font-weight: 700;
+
+  --text-display: 40px; /* text/title escalado para desktop */
+  --text-display--line-height: 48px;
+  --text-display--letter-spacing: -0.4px;
+  --text-display--font-weight: 700;
+
+  --text-card: 16px; /* text/card */
+  --text-card--line-height: 22px;
+  --text-card--font-weight: 600;
+
+  --text-body: 16px; /* text/body */
+  --text-body--line-height: 24px;
+  --text-body--font-weight: 400;
+
+  --text-button: 16px; /* text/button */
+  --text-button--line-height: 20px;
+  --text-button--font-weight: 600;
+
+  --text-label: 14px; /* text/label */
+  --text-label--line-height: 18px;
+  --text-label--font-weight: 500;
+
+  /* ---------- Sombras ---------- */
+  --shadow-header: 0 1px 3px 0 rgb(15 33 48 / 0.08); /* shadow/header */
+  --shadow-card: 0 2px 8px 0 rgb(15 33 48 / 0.1); /* shadow/card */
+
+  /* ---------- Tamanos de control (h-control, h-chip, min-h-card) ---------- */
+  --spacing-control: 48px; /* Button, Barra de busqueda */
+  --spacing-chip: 44px; /* Chip filtro, Boton volver */
+  --spacing-card: 88px; /* Altura minima de Card pais (area tactil) */
+}
+
+/* Tema daisyUI mapeado a los mismos tokens, para que btn, input, skeleton y alert hereden la identidad */
+@plugin "daisyui/theme" {
+  name: "explorer";
+  default: true;
+  color-scheme: light;
+
+  --color-base-100: #ffffff;
+  --color-base-200: #f4f7fa;
+  --color-base-300: #d5dee8;
+  --color-base-content: #10202e;
+  --color-primary: #12507b;
+  --color-primary-content: #ffffff;
+  --color-secondary: #0f766e;
+  --color-secondary-content: #ffffff;
+  --color-accent: #0b57d0;
+  --color-accent-content: #ffffff;
+  --color-neutral: #4f6070;
+  --color-neutral-content: #ffffff;
+  --color-info: #0f766e;
+  --color-info-content: #ffffff;
+  --color-success: #15803d;
+  --color-success-content: #ffffff;
+  --color-warning: #b45309;
+  --color-warning-content: #ffffff;
+  --color-error: #b91c1c;
+  --color-error-content: #ffffff;
+
+  --radius-selector: 999px;
+  --radius-field: 12px;
+  --radius-box: 12px;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+/* ==========================================================================
+   Modo oscuro: mismos nombres de token con valores para fondo oscuro.
+   Las utility classes (bg-surface, text-text-primary...) cambian solas.
+   ========================================================================== */
+@plugin "daisyui/theme" {
+  name: "explorer-dark";
+  default: false;
+  prefersdark: false;
+  color-scheme: dark;
+
+  --color-base-100: #13212e;
+  --color-base-200: #0b1620;
+  --color-base-300: #2a3f52;
+  --color-base-content: #e6edf3;
+  --color-primary: #7cc0f0;
+  --color-primary-content: #0a2e47;
+  --color-secondary: #2dd4bf;
+  --color-secondary-content: #04201d;
+  --color-accent: #8ab4f8;
+  --color-accent-content: #0a1f44;
+  --color-neutral: #9fb0c0;
+  --color-neutral-content: #0b1620;
+  --color-info: #2dd4bf;
+  --color-info-content: #04201d;
+  --color-success: #4ade80;
+  --color-success-content: #052e16;
+  --color-warning: #fbbf24;
+  --color-warning-content: #3a2503;
+  --color-error: #f87171;
+  --color-error-content: #3b0a0a;
+
+  --radius-selector: 999px;
+  --radius-field: 12px;
+  --radius-box: 12px;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@layer base {
+  [data-theme="explorer-dark"] {
+    --color-primary: #7cc0f0; /* 9.6:1 sobre background */
+    --color-primary-hover: #a3d3f5;
+    --color-primary-active: #c7e4f9;
+    --color-secondary: #2dd4bf;
+    --color-background: #0b1620;
+    --color-surface: #13212e;
+    --color-surface-subtle: #1a2d3d;
+    --color-text-primary: #e6edf3; /* 14.6:1 sobre surface */
+    --color-text-secondary: #9fb0c0; /* 7.4:1 sobre surface */
+    --color-text-on-primary: #0a2e47; /* 7.1:1 sobre primary */
+    --color-border: #2a3f52;
+    --color-focus: #8ab4f8;
+    --color-disabled-surface: #1f2f3d;
+    --color-disabled-text: #6b7c8c;
+
+    --shadow-header: 0 1px 3px 0 rgb(0 0 0 / 0.45);
+    --shadow-card: 0 2px 8px 0 rgb(0 0 0 / 0.35);
+  }
+
+  body {
+    @apply bg-background font-sans text-body text-text-primary antialiased;
+  }
+}
